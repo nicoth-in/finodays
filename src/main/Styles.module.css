@@ -1,0 +1,142 @@
+
+/* 
+.page {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+} */
+
+.grid {
+    display: grid;
+    grid-template-columns: [left-col] 1fr [center-col] 1fr [right-col] 1fr [end];
+    grid-template-rows: [head-row] 80px [content-row] auto [bottom-row] 80px [last-line];
+    gap: 0 var(--gap-size);
+    padding: 0 var(--padding-lg);
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.dialogsHead {
+    grid-column: left-col / center-col;
+    grid-row: head-row / content-row;
+}
+
+.chatHead {
+    grid-column: center-col / right-col;
+    grid-row: head-row / content-row;
+}
+
+.emotionHead {
+    grid-column: right-col / end;
+    grid-row: head-row / content-row;
+}
+
+.chatHistory {
+    grid-column: center-col / right-col;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.chatHistory:hover {
+    scrollbar-width: thin;
+}
+
+.emotionSuggestions {
+    grid-column: right-col / end;
+}
+
+.dialogsList {
+    grid-column: left-col / center-col;
+    grid-row: content-row / last-line;
+    border-right: var(--default-border);
+}
+
+.chatHead, .emotionHead {
+    border-bottom: var(--default-border);
+}
+
+.dialogsHead, .chatHead, .emotionHead {
+    padding: var(--padding-md);
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialogsHead {
+    border-right: var(--default-border);
+}
+
+.chatHistory, .emotionSuggestions, .dialogsList {
+    padding: var(--padding-md) 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatInput {
+    grid-column: center-col / right-col;
+    grid-row: bottom-row / last-line;
+}
+
+.chatInput > input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--padding-sm) var(--padding-md);
+    border: var(--default-border);
+    border-radius: var(--border-radius);
+    font-family: var(--inter-font);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.chatMsgRecv, .chatMsgSent {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    padding: var(--padding-md);
+    border-radius: var(--border-radius);
+    margin: var(--padding-sm) 0;
+}
+
+.chatMsgRecv {
+    border: var(--default-border);
+    align-self: flex-start;
+}
+
+.chatMsgRecv > p {
+    margin-top: var(--padding-sm);
+}
+
+.chatMsgSent {
+    background: var(--color-container);
+    align-self: flex-end;
+}
+
+.emotionLevel {
+    align-self: flex-start;
+    padding: 0 var(--padding-md);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 320px;
+}
+
+.emotionLevelBar {
+    height: 5px;
+    width: 100%;
+    margin: var(--padding-md) 0;
+    border-radius: var(--border-radius);
+    background: linear-gradient(90deg, #DCE2DC 0%, #FF616A 100%);
+}
+
+.dialogLink {
+    padding: var(--padding-sm) var(--padding-md);
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
