@@ -29,21 +29,25 @@ export default function Chat() {
                 <input type="text" placeholder="Введите текст.." value={inputMessage} onChange={(e)=>changeMessage(e.target.value)} onKeyPress={e => (e.code === "Enter") ? chatPostMessage() : null}/>
             </div>
 
-            <div className={styles.emotionHead}>
-                <h1>Эмоциональная оценка</h1>
-            </div>
 
-            <div className={styles.emotionSuggestions}>
+            {(isOperator) ? (
+                <>
+                    <div className={styles.emotionHead}>
+                        <h1>Эмоциональная оценка</h1>
+                    </div>
 
-                <div className={styles.emotionLevel}>
-                    <p>Состояние: {status.status1}</p>
-                    <p>В процентах: {status.status1Percenet * 100} %</p>
-                    <div className={("negative" == status.status1) ? styles.emotionLevelBar : styles.emotionLevelBarPos}></div>
-                    <div></div>
-                </div>
+                    <div className={styles.emotionSuggestions}>
 
-            </div>
+                        <div className={styles.emotionLevel}>
+                            <p>Состояние: {status.status1}</p>
+                            <p>В процентах: {status.status1Percenet * 100} %</p>
+                            <div className={("negative" == status.status1) ? styles.emotionLevelBar : styles.emotionLevelBarPos}></div>
+                            <div></div>
+                        </div>
 
+                    </div>
+                </>
+            ) : null}
         </>
     )
 }
