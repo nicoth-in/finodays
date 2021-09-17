@@ -39,8 +39,8 @@ export default function Chat() {
                     <div className={styles.emotionSuggestions}>
 
                         <div className={styles.emotionLevel}>
-                            <p>Состояние: {status.status1}</p>
-                            <p>В процентах: {status.status1Percenet * 100} %</p>
+                            <p>Состояние: {(!!status) ? status.status1 : null}</p>
+                            <p>В процентах: {(!!status) ? (status.status1Percenet * 100) : null} %</p>
                             <div className={("negative" == status.status1) ? styles.emotionLevelBar : styles.emotionLevelBarPos}></div>
                             <div></div>
                         </div>
