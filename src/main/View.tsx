@@ -2,6 +2,8 @@ import React from "react";
 import { useTextAnalysis } from "./Model";
 import styles from "./Styles.module.css";
 
+import Chat from "./Chat";
+
 export default function Main() {
 
     const { updateText, reportUpdate, currentStatus } = useTextAnalysis();
@@ -23,7 +25,7 @@ export default function Main() {
 
             {/* Left Bar */}
 
-            <div className={styles.dialogsHead}>
+            {/* <div className={styles.dialogsHead}>
                 <h1>Диалоги поддержки</h1>
             </div>
 
@@ -35,67 +37,15 @@ export default function Main() {
                     <span>5 мин 10 сек</span>
                 </a>
 
-            </div>
+            </div> */}
 
             {/* Chat section */}
 
-            <div className={styles.chatHead}>
-                <h1>Иван Фёдорович</h1>
-                <span>1 мин 30 сек</span>
-            </div>
-
-            <div className={styles.chatHistory}>
-
-                <div className={styles.chatMsgRecv}>
-                    <h3>Иван Фёдорович</h3>
-                    <p>Здравствуйте, в каком отделении банка я могу взять распечатку движения средств по счету??????</p>
-                </div>
-
-                <div className={styles.chatMsgSent}>
-                    <p>Здравствуйте, в каком отделении банка я могу взять распечатку движения средств по счету??????</p>
-                </div>
-
-                <div className={styles.chatMsgRecv}>
-                    <h3>Иван Фёдорович</h3>
-                    <p>Здравствуйте, в каком отделении банка я могу взять распечатку движения средств по счету??????</p>
-                </div>
-
-                <div className={styles.chatMsgSent}>
-                    <p>Здравствуйте, в каком отделении банка я могу взять распечатку движения средств по счету??????</p>
-                </div>
-
-                <div className={styles.chatMsgRecv}>
-                    <h3>Иван Фёдорович</h3>
-                    <p>Здравствуйте, в каком отделении банка я могу взять распечатку движения средств по счету??????</p>
-                </div>
-
-                <div className={styles.chatMsgSent}>
-                    <p>Здравствуйте, в каком отделении банка я могу взять распечатку движения средств по счету??????</p>
-                </div>
-
-
-            </div>
-
-            <div className={styles.chatInput}>
-                <input type="text" placeholder="Введите текст.." />
-            </div>
+            <Chat />
 
             {/* Emotion section */}
 
-            <div className={styles.emotionHead}>
-                <h1>Эмоциональная оценка</h1>
-            </div>
-
-            <div className={styles.emotionSuggestions}>
-
-                <div className={styles.emotionLevel}>
-                    <p>Высокий уровень негатива</p>
-
-                    <div className={styles.emotionLevelBar}></div>
-                    <div></div>
-                </div>
-
-            </div>
+            
 
         </div>
     )

@@ -122,7 +122,7 @@
     max-width: 320px;
 }
 
-.emotionLevelBar {
+.emotionLevelBar, .emotionLevelBarPos {
     height: 5px;
     width: 100%;
     margin: var(--padding-md) 0;
@@ -139,4 +139,8 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+}
+
+.emotionLevelBarPos {
+    background: linear-gradient(90deg, #DCE2DC 0%, #77FF61 100%);
 }

@@ -1,0 +1,47 @@
+
+.registerModal {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    margin-top: var(--padding-lg);
+    padding: var(--padding-md);
+    border: var(--default-border);
+    border-radius: var(--border-radius);
+}
+
+.registerModal > input, .registerModal button  {
+    margin: var(--padding-md) 0 0 0;
+    border: var(--default-border);
+    border-radius: var(--border-radius);
+    padding: var(--padding-sm) var(--padding-md);
+    font: var(--inter-font);
+    font-size: 14px;
+}
+
+.registerModal button {
+    cursor: pointer;
+    background: var(--color-container);
+}
+
+.registerModal button:hover {
+    color: var(--color-accent);
+}
+
+.chooseButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.registerModal > h1 {
+    text-align: center;
+}
+
+.registerModal a {
+    color: var(--color-text);
+    margin: var(--padding-sm) 0;
+    padding: 0 var(--padding-md);
+    font-size: 14px;
+}
+
